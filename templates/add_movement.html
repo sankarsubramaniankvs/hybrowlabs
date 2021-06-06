@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset='utf-8'>
+    <title>HYBROWLABS</title>
+    <link rel="stylesheet" href='/static/add_movement.css' />
+    {{locations}}
+    {{products}}
+</head>
+<body>
+    <div id='header'><h1>MOVEMENTS</h1></div>
+    <div id=input-wrapper>
+        <h2>Add Movement</h2>
+        <div id='auth'></div>
+        <p></p>
+    <h4>From</h4>
+    <p></p>
+    <select name='from' id='from' required>
+        <option value=''></option>
+        {% for i in locations %}
+        <option value='{{i[1]}}'>{{i[1]}}</option>
+        {% endfor %}
+    </select>
+    <p></p>
+    <h4>To</h4>
+    <p></p>
+    <select name='to' id='to' required>
+        <option value=''></option>
+        {% for i in locations %}
+        <option value='{{i[1]}}'>{{i[1]}}</option>
+        {% endfor %}
+    </select>
+    <p></p>
+    <h4>Product</h4>
+    <p></p>
+    <select name='product' id='product' required>
+        {% for i in products %}
+        <option value='{{i[1]}}'>{{i[1]}}</option>
+        {% endfor %}
+    </select>
+   <p></p>  
+    <input name='qty' id='qty' type='text' placeholder="Quantity">
+    <p></p>
+    <div id='back-button'><span>BACK</span></div>
+    <div id='add-button'><span>ADD</span></div>
+</div>
+
+    <script type='text/javascript' src="{{url_for('static',filename='add_movement.js')}}"></script>
+</body>

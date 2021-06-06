@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>HYBROWLABS</title>
+    <link rel="stylesheet" href='/static/location_view.css' />
+</head>
+
+<body>
+    <div id=header>
+        <div id=heading>
+            <h1>{{location}}</h1>
+        </div>
+        <div id=menu>
+            <div class=menu-item>
+                <a href='/locations'>
+                    <i class='fa fa-arrow-circle-left'></i></a>
+            </div>
+        </div>
+    </div>
+    <div id='inner-body'>
+        <div id="head" class='item'>
+            <div id='id-display' class='item-id'>ID</div>
+            <div id='location-product' class='item-product'>PRODUCT</div>
+            <div id='location-quantity' class='item-qty'>QUANTITY</div>
+        </div>
+        {% for i in items %}
+        <div id="{{ i[0] }}" class='item'>
+            <div id='id-display' class='item-id'>{{ i[0] }}</div>
+            <div id='location-product' class='item-product'>{{ i[1]}}</div>
+            <div id='qty-{{i[0]}}' class='item-qty' name='{{ i[0]}}'>
+                {{i[2]}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<script typr='text/javascript' src="{{url_for('static',filename='location_view.js')}}"></script>
+</body>
+
+</html>

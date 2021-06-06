@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>HYBROWLABS</title>
+    <link rel="stylesheet" href='/static/edit_product.css' />
+</head>
+{{ product }}
+
+<body>
+    <div id='header'>
+        <h1>Products</h1>
+    </div>
+    <div id=input-wrapper>
+        <h2>Edit Product</h2>
+        <div id='auth'></div>
+        
+            <h2>ID: <div id='id'>{{ product[0] }}</div></h2>
+        
+
+        <input name='name' id='name' type='text' placeholder="Product Name" value="{{product[1]}}"" >
+        <p>
+        <div id='back-button'><span>BACK</span></div>
+        <div id='edit-button'><span>MODIFY</span></div>
+        
+    </div>
+    <script type='text/javascript' src=" {{url_for('static',filename='edit_product.js' )}}"></script>
+</body>

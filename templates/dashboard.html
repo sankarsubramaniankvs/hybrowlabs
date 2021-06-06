@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>HYBROWLABS</title>
+    <link rel="stylesheet" href='/static/dashboard.css' />
+</head>
+<body>
+    <div id='header'>
+        <div id=heading>
+        <h1><b>DASHBOARD</b></h1>
+        </div>
+    <div id=header-account>
+        <h4>Account</h4>
+        <button class='dropdown-button'>
+        <i class ='fa fa-caret-down'></i>
+        </button>
+        <div class='dropdown-content'>
+            <a href="/password_setting">Change Password</a>
+            <a href="/login">Logout</a>
+        </div>
+   
+    </div>
+    </div>
+    <div id='inner_body'>
+        <div class='card' id='products'>
+            <div id=icon>
+                <i class='fa fa-dropbox'></i>
+            </div>
+            PRODUCTS
+        </div>
+        <div class='card' id='locations'>
+            <div id=icon>
+                <i class='fa fa-location-arrow'></i>
+            </div>
+            LOCATIONS
+            </div>
+        <div class='card' id='movements'>
+            <div id=icon>
+                <i class='fa fa-truck'></i>
+            </div>
+            
+            MOVEMENTS
+
+        </div>
+
+
+    </div>
+    <script typr='text/javascript' src="{{url_for('static',filename='dashboard.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <title>HYBROWLABS</title>
+    <link rel="stylesheet" href='/static/products.css' />
+</head>
+<body>
+    <div id=header>
+        <div id=heading><h1>Products</h1></div>
+        <div id=menu>
+            <div class=menu-item>
+                <a href='/add_product'>
+                <i class='fa fa-plus'></i></a>
+            </div>
+            <div class=menu-item>
+                <a href='/loginredirect'>
+                <i class='fa fa-arrow-circle-left'></i></a>
+            </div>
+        </div>        
+    </div>
+    <div id='inner-body'>
+        <div id="head" class='item'>
+            <div id='id-display' class = 'item-id'>ID</div>
+            <div id='product-name' class = 'item-name'>PRODUCT NAME</div>
+            <div id ='product-edit' class = 'item-edit'>
+                EDIT
+            </div>
+            <div id='product-delete' class='item-delete'>
+                DELETE
+            </div>
+        </div>
+        {% for i in products %}
+            <div id="{{ i[0] }}" class='item'>
+                <div id='id-display' class = 'item-id'>{{ i[0] }}</div>
+                <div id='product-name' class = 'item-name'>{{ i[1]}}</div>
+                <div id ='edit-{{i[0]}}' class = 'item-edit' name='{{ i[0]}}'>
+                    <i class='fa fa-edit'></i>
+                </div>
+                <div id = 'delete-{{i[0]}}' class='item-delete' name='{{ i[0]}}'>
+                    <i class='fa fa-remove'></i>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+    <script typr='text/javascript' src="{{url_for('static',filename='products.js')}}"></script>
+</body>
+</html>
